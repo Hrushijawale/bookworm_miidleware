@@ -1,0 +1,34 @@
+package com.example.entities;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table
+public class ProductTypeMaster {
+
+	 private long typeId;
+	 private String typeDesc;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
+	public long getTypeId() {
+		return typeId;
+	}
+	public void setTypeId(long typeId) {
+		this.typeId = typeId;
+	}
+	  
+	public String getTypeDesc() {
+		return typeDesc;
+	}
+	public void setTypeDesc(String typeDesc) {
+		this.typeDesc = typeDesc;
+	}
+	
+	
+	
+}

@@ -1,0 +1,38 @@
+package com.example.entities;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "Attribute Master")
+public class AttributeMaster {
+
+	private long attributeId;
+	private String attributeDesc ;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "attributeId" , referencedColumnName = "attributeId")
+	public long getAttribute_Id() {
+		return attributeId;
+	}
+	public void setAttribute_Id(int attribute_Id) {
+		attributeId = attribute_Id;
+	}
+	public String getDesc() {
+		return attributeDesc;
+	}
+	
+	public void setDesc(String desc) {
+		attributeDesc = desc;
+	}
+	
+	
+}

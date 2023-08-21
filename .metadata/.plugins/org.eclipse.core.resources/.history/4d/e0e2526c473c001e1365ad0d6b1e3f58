@@ -1,0 +1,13 @@
+package com.example.services;
+import java.util.List;
+
+import com.example.entities.MyShelf;
+import com.example.entities.ProductMaster;
+
+public interface MyShelfService {
+	List<MyShelfService> getProducts(String pname);
+	void addMyShelf(MyShelf shelf);
+	void deleteMyShelf(MyShelf shelf);
+	void UpdateMyShelf(MyShelf shelf);
+	
+}

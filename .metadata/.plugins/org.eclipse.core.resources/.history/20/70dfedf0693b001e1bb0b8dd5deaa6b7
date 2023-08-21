@@ -1,0 +1,55 @@
+package com.example.entities;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "Product Attribute")
+public class ProductAttribute {
+	private long prodAttId;
+	private long attributeId;
+	private long productId;
+	String attributeValue;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	public long getProdAttId() {
+		return prodAttId;
+	}
+
+	public void setProdAttId(int prod_Att_Id) {
+		prodAttId = prod_Att_Id;
+	}
+
+	@OneToOne(cascade = CascadeType.ALL)
+	public long getAttributeId() {
+		return attributeId;
+	}
+
+	public void setAttributeId(int attribute_Id) {
+		attributeId = attribute_Id;
+	}
+
+	@OneToOne(cascade = CascadeType.ALL)
+	public long getProduct_Id() {
+		return productId;
+	}
+
+	public void setProductId(int product_Id) {
+		productId = product_Id;
+	}
+
+	public String getAttributeValue() {
+		return attributeValue;
+	}
+
+	public void setAttributeValue(String attribute_Value) {
+		attributeValue = attribute_Value;
+	}
+
+}

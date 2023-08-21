@@ -1,0 +1,13 @@
+package com.example.services;
+import java.util.List;
+import org.aspectj.apache.bcel.Repository;
+
+public class ProductMasterImpl implements ProductMasterService {
+
+	@Override
+	public List<ProductMasterService> getProducts(String pname) {
+
+		return Repository.getProductMaster(pname);
+	}
+	
+}

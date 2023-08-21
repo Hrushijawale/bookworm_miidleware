@@ -1,0 +1,33 @@
+package com.example.services;
+import java.util.List;
+import org.aspectj.apache.bcel.Repository;
+
+import com.example.entities.ProductMaster;
+
+public class MyShelfImpl implements ProductMasterService {
+
+	@Override
+	public List<ProductMasterService> getProducts(String pname) {
+
+		return Repository.getProductMaster(pname);
+	}
+
+	@Override
+	public void addProductMaster(ProductMaster pmaster) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteProductMaster(ProductMaster pmaster) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void UpdateProductMaster(ProductMaster pmaster) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

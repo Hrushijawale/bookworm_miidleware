@@ -1,0 +1,44 @@
+
+
+	package com.examples.controller;
+
+	import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+	import org.springframework.web.bind.annotation.*;
+	import com.example.entities.MyShelf;
+	import com.example.services.MyShelfService;
+
+	@RestController
+	@RequestMapping("/myshelf")
+	public class MyShelfController {
+
+	    private final MyShelfService myShelfService;
+
+	    @Autowired
+	    public MyShelfController(MyShelfService myShelfService) {
+	        this.myShelfService = myShelfService;
+	    }
+
+	    @GetMapping("/products")
+	    public List<MyShelfService> getProducts(@RequestParam String pname) {
+	        return myShelfService.getProducts(pname);
+	    }
+
+	    @PostMapping("/add")
+	    public void addMyShelf(@RequestBody MyShelf shelf) {
+	        myShelfService.addMyShelf(shelf);
+	    }
+
+	    @DeleteMapping("/delete")
+	    public void deleteMyShelf(@RequestBody MyShelf shelf) {
+	        myShelfService.deleteMyShelf(shelf);
+	    }
+
+	    @PutMapping("/update")
+	    public void updateMyShelf(@RequestBody MyShelf shelf) {
+	        myShelfService.UpdateMyShelf(shelf);
+	    }
+	}
+
+

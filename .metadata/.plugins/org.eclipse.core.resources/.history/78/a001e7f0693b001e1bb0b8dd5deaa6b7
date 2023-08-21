@@ -1,0 +1,56 @@
+package com.example.entities;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+
+@Entity
+
+public class ProductBenMaster {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long prodBenId;
+	private long prodBenBenId;
+	private long prodBenProductId;
+	private double prodBenPercentage;
+	public long getprodBenId() {
+		return prodBenId;
+	}
+	public void setprodBenId(long prodBenId) {
+		this.prodBenId = prodBenId;
+	}
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "prodBenBenId", referencedColumnName="benId")
+	public long getprodBenBenId() {
+		return prodBenBenId;
+	}
+	public void setprodBenBenId(long prodBenBenId) {
+		this.prodBenBenId = prodBenBenId;
+	}
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "prodBenProductId", referencedColumnName="productId")
+	public long getprodBenProductId() {
+		return prodBenProductId;
+	}
+	public void setprodBenProductId(long prodBenProductId) {
+		this.prodBenProductId = prodBenProductId;
+	}
+	public double getprodBenPercentage() {
+		return prodBenPercentage;
+	}
+	public void setprodBenPercentage(double prodBenPercentage) {
+		this.prodBenPercentage = prodBenPercentage;
+	}
+	@Override
+	public String toString() {
+		return "projectBenMaster [prodBenId=" + prodBenId + ", prodBenBenId=" + prodBenBenId
+				+ ", prodBenProductId=" + prodBenProductId + ", prodBenPercentage=" + prodBenPercentage
+				+"]";
+	}
+}

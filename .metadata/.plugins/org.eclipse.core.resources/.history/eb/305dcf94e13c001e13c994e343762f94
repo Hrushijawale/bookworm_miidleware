@@ -1,0 +1,50 @@
+package com.example.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.entities.MyShelf;
+import com.example.repositories.MyShelfRepository;
+
+@Service
+public class MyShelfServiceImp implements MyShelfService {
+
+	@Autowired
+	private MyShelfRepository myshelfrepository;
+	
+	public List<MyShelf> getMyShelf(String pname) {
+		
+		return myshelfrepository.findAll();
+	}
+
+	@Override
+	public void addMyShelf(MyShelf shelf) {
+		myshelfrepository.save(shelf);
+		
+	}
+
+	@Override
+	public void deleteMyShelf(MyShelf shelf) {
+		myshelfrepository.delete(shelf);
+		
+	}
+
+	public void updateMyShelf(MyShelf shelf) {
+		
+	}
+
+	@Override
+	public List<MyShelfService> getMyshelf(String pname) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void UpdateMyShelf(MyShelf shelf) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

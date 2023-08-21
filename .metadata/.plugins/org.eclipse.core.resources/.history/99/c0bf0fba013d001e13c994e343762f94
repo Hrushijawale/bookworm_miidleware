@@ -1,0 +1,18 @@
+package com.example.services;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.example.entities.MyShelf;
+
+
+public interface MyShelfService {
+	List<MyShelf> getMyShelf();
+	void addMyShelf(MyShelf shelf);
+	void deleteMyShelf(MyShelf shelf);
+	void updateMyShelf(MyShelf shelf);
+	
+	
+	
+}

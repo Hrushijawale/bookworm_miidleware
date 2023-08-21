@@ -1,0 +1,12 @@
+package com.example.services;
+import java.util.List;
+
+import com.example.entities.ProductMaster;
+
+public interface ProductMasterService {
+	List<ProductMasterService> getProducts(String pname);
+	void addProductMaster(ProductMaster pmaster);
+	void deleteProductMaster(ProductMaster pmaster);
+	void UpdateProductMaster(ProductMaster pmaster);
+	
+}

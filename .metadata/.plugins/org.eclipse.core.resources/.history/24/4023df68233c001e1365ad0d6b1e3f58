@@ -1,0 +1,6 @@
+package com.example.services;
+import java.util.List;
+
+public interface ProductMasterService {
+	List<ProductMasterService> getProducts(String pname);
+}
